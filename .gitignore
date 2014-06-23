@@ -1,0 +1,7 @@
+/Temp
+/obj
+/library
+/Builds
+*.csproj
+*.unityproj
+*.sln
