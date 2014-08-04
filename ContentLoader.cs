@@ -79,7 +79,7 @@ namespace Festi
 			}
 			_redownloadingTtl--;
 			
-			Debug.Log("Loading timeout -- Restarting");
+//			Debug.Log("Loading timeout -- Restarting");
 			_loadingTime = 0;
 			string url = this._loader.url;
 			_loader = new WWW(url);
@@ -88,7 +88,7 @@ namespace Festi
 		private void OnDownloadComplete ()
 		{
 			if (this._loader.error != null) {
-				Debug.Log("Download finished with error " + _loader.error);
+//				Debug.Log("Download finished with error " + _loader.error);
 				Festi.Event.ErrorEvent errorEvent = new Festi.Event.ErrorEvent();
 				errorEvent.SetText("Error unknown. " +  _loader.error);
 				SceneController sceneController = SceneController.GetInstance();
@@ -114,7 +114,7 @@ namespace Festi
 						
 		private void OnDownloadFailedByTtl ()
 		{
-			Debug.Log("Download failed");
+//			Debug.Log("Download failed");
 			
 			ResponseEvent responseEvent = new ResponseEvent(this._loader, this);
 			if (!string.IsNullOrEmpty(this._id)) {

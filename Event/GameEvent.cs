@@ -7,8 +7,8 @@ namespace Festi.Event
 	public class GameEvent 
 	{
 		private bool _isPropagated = true;
-		protected IEventDispatcher target;
-		public IEventDispatcher Target
+		protected System.Object target;
+		public System.Object Target
 		{
 			get 
 			{
@@ -29,9 +29,19 @@ namespace Festi.Event
 		
 		public GameEvent (IEventDispatcher target)
 		{
+			this.Target = (System.Object) target;
+		}
+
+		public GameEvent (System.Object target)
+		{
 			this.Target = target;
 		}
-		
+
+		public GameEvent (string target)
+		{
+			this.Target = (System.Object) target;
+		}
+
 		public void StopPropagation ()
 		{
 			this._isPropagated = false;

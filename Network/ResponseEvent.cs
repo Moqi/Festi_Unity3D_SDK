@@ -16,7 +16,7 @@ namespace Festi.Network
 		public ResponseEvent (WWW wwwContent, IEventDispatcher target)
 		{
 			this.Responce = wwwContent;
-			this.Target = target;	
+			this.Target = (System.Object) target;	
 		}
 		
 		public ResponseEvent (string responseString)
